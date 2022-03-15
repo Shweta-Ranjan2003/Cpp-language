@@ -1,0 +1,2 @@
+content of file2.cpp
+adding second line
