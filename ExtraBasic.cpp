@@ -1,20 +1,21 @@
 #include <bits/stdc++.h>
 using namespace std;
 int main(){
+    /*
                                                   //Ascii value
-    // char a;
-    // cin>>a;
-    // cout<<(int)a<<endl; //print the ascii value of that character. Internally ascii value is stored of character
-    // int b = 97;
-    // cout <<(char)b<<endl; //a
-    // cout <<'b'+1<<endl; //99
-    // cout <<'b'+'c'<<endl; //197
-    // cout <<(' '+' ')<<endl; //64 because space is 32 .
-    // cout <<(char)(' '+' ')<<endl; //@
-    //  int arr[]={83,72,69,87,84,65,32,78,65,72,73,32,83,72,87,69,84,65};
-    // for(char c: arr){
-    //     cout<<c; //SHEWTA NAHI SHWETA  32 is for space in ascii
-    // }
+     char a;
+     cin>>a;
+     cout<<(int)a<<endl; //print the ascii value of that character. Internally ascii value is stored of character
+     int b = 97;
+     cout <<(char)b<<endl; //a
+     cout <<'b'+1<<endl; //99
+     cout <<'b'+'c'<<endl; //197
+     cout <<(' '+' ')<<endl; //64 because space is 32 .
+     cout <<(char)(' '+' ')<<endl; //@
+      int arr[]={83,72,69,87,84,65,32,78,65,72,73,32,83,72,87,69,84,65};
+     for(char c: arr){
+         cout<<c; //SHEWTA NAHI SHWETA  32 is for space in ascii
+     }
 
                                       // Precedence in calculation
     // character<int<long int<long long int< float <double
@@ -101,6 +102,24 @@ int main(){
      //But globally you can initialize array of size upto 10^7
      //Because when we declare array in main or any other function then it gets store in stack which has a memory limit but when we declare array globally then it gets stored in data segment which does not have any memory limit as such. 
      //when declare an array[n] globally then make sure n is declared as constant. 
-     
+                                           //Pointers and double pointer
+     int ptrarray[10]={0,1,2,3,4,5,6,7,8,9};
+     cout<<ptrarray<<endl; //name of array itself is a address of its first element
+     cout<<*ptrarray<<endl; //ptrarray<->&ptrarray[0] and *ptrarray<->*(ptrarray[0])
+     cout<<*(ptrarray+1)<<endl;
+     cout<<ptrarray[1]<<endl;
+     //*(ptrarray+1) = ptrarray[1] because when we add 1 to a int pointer it then points to memory location of 4bytes after current
+     int var = 4;
+     int *Dptr = &var;
+     int **pp = &Dptr; //**pp means pointer to a pointer
+     cout<<Dptr<<endl; //address of var
+     cout<<*Dptr<<endl; //value of var
+     cout<<&Dptr<<endl; //address of Dptr
+     cout<<pp<<endl; //address of Dptr
+     cout<<*pp<<endl; //address of var
+     cout<<**pp<<endl; //value of var
+    */
+
+
     return 0;
 }
