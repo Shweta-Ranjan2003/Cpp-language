@@ -40,18 +40,55 @@ void operator - (uni &r1){
   r1.a = -r1.a;
   r1.b = -r1.b;
 }
+//Binary 
+class complex{
+  int x,y;
+  public:
+  complex(){}
+  complex(int a , int b){
+      x=a;
+      y=b;
+  }
+  void display(){
+      cout<<"real part = "<<x<<endl;
+      cout<<"imaginary part = "<<y<<endl;
+  }
+  complex operator + (complex &r1){
+      complex temp;
+      temp.x = x+r1.x; //c1's x + c2's x because c1 is used to call this func and c2 is passed by reference
+     temp.y= y+r1.y;
+     return temp;
+  }
+  friend complex operator - (complex &r1 , complex &r2);
+};
+complex operator - (complex &r1 , complex &r2){
+    complex temp;
+    temp.x = r1.x-r2.x;
+    temp.y = r1.y-r2.y;
+    return temp;
+}
 int main()
 { 
   uni obj;
   obj.getdata(-10,20);
   obj.display();
-  ++obj;
+  ++obj;  //operator first and then operand
   obj.display();
-  obj--;
+  obj--; //operand first and then operator in post decrement and increment.
   obj.display();
   -obj;
   obj.display();
-
+//Binary
+   complex c1(5,7);
+   c1.display();
+   complex c2(10,15);
+   c2.display();
+   complex c3;
+   c3=c1+c2; //or we can write like this c3=c1.operator+ (c2)
+   c3.display();
+   complex c4;
+   c4=c2-c1; //c4=c2.operator - (c1)
+   c4.display();
 
  return 0;
 }
