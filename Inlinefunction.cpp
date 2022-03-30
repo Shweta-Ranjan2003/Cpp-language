@@ -4,6 +4,11 @@ Inline function:- If the inline function is being used when the function is call
 the whole function code at the point of a function call,instead of running the function.
 Inline functions are considered to be used when the function is small otherwise it will not perform well.
 
+A function definition in a class definition is an inline function definition , even without the use of the inline specifier.
+A member function that is defined inside its class member list is called an inline member function.
+An equivalent way to declare an inline member function is to either declare it in the class with the inline keyword(and define the function outside of its class)
+or to define it outside of the class declaration using the inline keyword.
+
 Default arguments:- Default arguments are those values which are used by the function if we don’t input our value.
 It is recommended to write default arguments after the other arguments.
 
@@ -12,7 +17,12 @@ or modified by the function.
 */
 
 using namespace std;
-
+class inl{
+    public:
+    void get(){} //this is also inline member function
+    void show();
+};
+inline void inl:: show(){} //this is also inline member function
 inline int product(int a , int b )
 {
     // Not recommended to use below lines with inline functions
