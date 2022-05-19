@@ -13,10 +13,14 @@ The dereference operator ->* is used to access a member when we use pointers to 
 The dereference operator .* is used when object itself is used with the member pointer.
 
 Every object in C++ has access to its own address through an important pointer called this pointer.
-The “this” is a keyword that is an implicit pointer. 
-the "this" pointer is an implicit parameter to all member functions. Therefore, inside a member function, this 
+The “this” is a keyword that is an implicit pointer.
+The this pointer is an implicit parameter to all member function . Therefore, inside a member function , this
 may be used to refer to the invoking object.
+Friend function do not have a this pointer , because friends are not members of a class . only member functions
+have a this pointer 
 “this” pointer points to the object which calls the member function.
+A static member function does not have a this pointer.
+We cannot declare this pointer or make assignment to it.
 */
 using namespace std;
 class A{

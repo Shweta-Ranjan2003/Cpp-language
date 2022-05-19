@@ -5,7 +5,8 @@ by assigning the value 0 to it. Pure virtual functions are declared in abstract 
 
 Abstract base class is a class that has at least one pure virtual function in its body. 
 The classes which are inheriting the base class must need to override the virtual function 
-of the abstract class otherwise compiler will throw an error.
+of the abstract class otherwise compiler will throw an error. We cannot create obj of the 
+abstract class , but we can create pointer to that class.
 */
 
 using namespace std;
@@ -54,7 +55,7 @@ int main()
     string title;
     float rating, vlen;
     int words;
-
+    // CWH obj; //error
     // for Video
     title = "Django tutorial";
     vlen = 4.56;
@@ -72,7 +73,9 @@ int main()
     tuts[1] = &djText;
 
     tuts[0]->display();
+    // djVideo.display(); //Same output as up
     tuts[1]->display();
+    // djText.display();
     //if we do not make virtual display function as pure virtual function then also if we do not
     //re-define display func in derived class and call it then virtual function of base class will invoke
     //but if we make it pure virtual function then it is compulsory for us to redefine it in base class.

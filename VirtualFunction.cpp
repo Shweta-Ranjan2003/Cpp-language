@@ -34,5 +34,10 @@ int main()
 
     base_class_pointer = &obj_derived;
     base_class_pointer->display(); //now this will run display function of derived class.
+    obj_base.display(); //base
+    obj_derived.display(); //derived
+    base_class_pointer = &obj_base;
+    base_class_pointer->display(); //base
+    //If we remove virtual keyword from base class function then obj-derived.display() will run derived function.
     return 0;
 }

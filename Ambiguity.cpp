@@ -1,9 +1,12 @@
 #include <iostream>
 /*
-Ambiguity in inheritance can be defined as when one class is derived for two or more base classes 
+Ambiguity in inheritance can be defined as when one class is derived from two or more base classes 
 then there are chances that the base classes have functions with the same name. 
 So it will confuse derived class to choose from similar name functions. 
 To solve this ambiguity scope resolution operator is used “::”. 
+Or we can also call base class function using derived class object 
+    //Ambiguity solved:- <derived object>.<base class name>::<function name>(<parameter>)
+
 */
 
 using namespace std;
@@ -52,16 +55,19 @@ int main()
     // Ambiguity 1
      Base1 base1obj;
      Base2 base2obj;
-     base1obj.greet();
-     base2obj.greet();
+     base1obj.greet(); //base1 greet
+     base2obj.greet(); //base2 greet
      Derived d;
-     d.greet();
+     d.greet(); //base2 greet
 
      // Ambibuity 2
     B b;
-    b.say();
-
+    b.say(); //B say
+   
     D a;
-    a.say();
+    a.say(); // D say
+    D amb;
+    amb.B::say(); //B say
+    // b.D::say(); //error
     return 0;
 }

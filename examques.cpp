@@ -34,12 +34,13 @@ using namespace std;
 
 int main()
 {
-   //int array[] = {10,20,30};
-   //cout<< -2[array]; //-30 doubt
-//    const char *a = "hello world";
-//  print(const_cast<char *> (a));
+   int array[] = {10,20,30};
+   cout<< -2[array]; //-30 doubt
+    const char *a = "hello world";
+    cout<<endl;
+  print(const_cast<char *> (a));
 C c(1);
- c.show();
+ c.show();  //10
 
     return 0;
 }

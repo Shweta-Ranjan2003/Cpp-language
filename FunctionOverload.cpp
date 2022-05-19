@@ -4,6 +4,18 @@ Function overloading is a process to make more than one function with the same n
 different parameters, numbers, or sequence.
 */
 using namespace std;
+class a{
+    public:
+    void show(){
+        cout<<"hello";
+    }
+};
+class b:public a{
+    public:
+    void show(){
+        cout<<"hi";
+    }
+};
 
 int sum(float a, int b){
     cout<<"Using function with 2 arguments"<<endl;
@@ -37,5 +49,21 @@ int main(){
     cout<<"The volume of cuboid of 3, 7 and 6 is "<<volume(3, 7, 6)<<endl;
     cout<<"The volume of cylinder of radius 3 and height 6 is "<<volume(3, 6)<<endl;
     cout<<"The volume of cube of side 3 is "<<volume(3)<<endl;
+
+    /*
+    Function Overriding:- When function with same signature(or prototype) is redefined
+    in the derived class [i.e. Base and derived class have same
+    function], then on accessing the same function with the object
+    of derived class, always derived class version of that function
+    will be called, as it will override( or hide) the base class
+    function
+    • If we want to access the base class version of that function,
+    then it can be accessed with the help of base class name and
+    scope resolution operator used with the derived class object.
+    • <derived_object>.<base_Class_name>::<function_name>(<parameters if required>);
+    */
+   b obj;
+   obj.show(); //function overriding derived class function will be called
+   obj.a::show();
     return 0;
 }
