@@ -118,6 +118,9 @@ int main(){
      cout<<pp<<endl; //address of Dptr
      cout<<*pp<<endl; //address of var
      cout<<**pp<<endl; //value of var
+
+     // When we equate two pointer like int* a , int * b;
+     a = b; //it means now a will also point to the same memory address as b;
     */
 
 
