@@ -121,6 +121,23 @@ int main(){
 
      // When we equate two pointer like int* a , int * b;
      a = b; //it means now a will also point to the same memory address as b;
+
+     //In recursion when recursive call is made then that function gets on hold and recursive function 
+     starts working and process goes on but at last where an condition is given for exiting recursion there
+     new recursive call is stopped and the below line of that function which were on hold starts working
+     in backward order because stack works on LIFO 
+
+     eg.
+     void functionn(int a){  //a passed is 1
+       if(a=5){
+        return;
+       }
+       a++;
+       functionn(a);
+       cout<<a;
+     }
+     Here when a will be equal to 5 then recursion call will stop and then cout of last recursion (4) will be
+     printed then 3,2,1 and .
     */
 
 
