@@ -6,7 +6,7 @@ using namespace std;
 
 // int sum(int a, int b); //--> Acceptable
 // int sum(int a, b); //--> Not Acceptable 
-int sum(int, int); //--> Acceptable 
+   int sum(int, int); //--> Acceptable 
 // void g(void); //--> Acceptable 
 void g(); //--> Acceptable 
 

@@ -1,64 +1,49 @@
 #include <iostream>
-#include <list>
 #include <map>
-/*
-A List is a bi-directional linear storage of elements. Few key features as to why a list should be used is, 
-
-It gives faster insertion and deletion operations.
-Its access to random elements is slow.
-*/
-
+#include <set>
 using namespace std;
-void display(list<int> &A)
-{
-    list<int> :: iterator it;
-    for ( it = A.begin(); it!=A.end(); it++) //A.end() means iterator will point to the end element.
-    {
-        cout<<*it<<" ";
+void displaySet(set<int> &s){
+    for (auto i : s){
+        cout<<i<<" ";
     }
     cout<<endl;
 }
-
+void displayMap(map <string , float> m){
+    for (auto i : m){
+        cout<<i.first<<" "<<i.second<<endl;
+    }
+    cout<<endl;
+}
 int main()
 {
-   list<int> list1;
-   list1.push_back(2);
-   list1.push_back(4);
-   list1.push_back(6);
-   list1.push_back(8);
-   display(list1); // 2 4 6 8
-   list1.push_front(10);
-   display(list1); // 10 2 4 6 8
-//    list1.pop_back();
-//    display(list1); // 10 2 4 6
-//    list1.pop_front();
-//    display(list1); // 2 4 6
-//    list1.remove(4); //removes all the occurrences of 4.
-//    display(list1); //2 6
-    list1.sort();
-    display(list1); //2 4 6 8 10
-    list1.reverse();
-    display(list1); // 10 8 6 4 2
+    /*
+    //--------------Set----------------
+    // Set stores only unique elements (no duplicates)
+    // Output is in sorted manner - implementation is like BST (search time - log(n))
+    // erase , find , insert , count - log(n)
+    // size , begin , end , empty - O(1)
+    // Unordered set - not sorted - implementation is like hash table (search time - O(n))
+    set<int> s;
+    s.insert(5);
+    s.insert(5);
+    s.insert(1);
+    s.insert(6);
+    s.insert(6);
+    s.insert(0);
+    s.insert(0);
+    s.insert(1);
+    displaySet(s); // 0 1 5 6
+    set<int>::iterator it = s.begin();
+    it++;
+    s.erase(it); //1 will be deleted
+    displaySet(s); // 0 5 6
+    cout<<"1 is present or not "<<s.count(1)<<endl; //0
+    set<int>::iterator itr = s.find(6);
+    cout<<*itr<<endl; //6
+    */
     
-   list <int> list2(4); //Empty list of size 4 , it is imp to declare size of list when we dereference
-                        //iterator and add value to list.
-   list<int> :: iterator ptr; //or  list<int> :: iterator ptr = list2.begin();
-   ptr = list2.begin();
-   *ptr = 12;
-   ptr++;
-   *ptr = 14;
-   ptr++;
-   *ptr = 16;
-   ptr++;
-   *ptr = 18;
-   display(list2);
-   list2.reverse();
-   list1.merge(list2);
-   display(list1); // 10 8 6 4 2 18 16 14 12
-   list1.sort();
-   display(list1); // 2 4 6 8 10 12 14 16 18
-
-   //A map in C++ STL is an associative container which stores key value pairs. 
+    // -------------------Map--------------------
+  //A map in C++ STL is an associative container which stores key value pairs. 
    //a map stores a key of some data type and its corresponding values of some data type.
    //Syntax:- map <data_type_of_key,   data_type_of_value>  variable_name;
     map <string , float> marksMap;
@@ -79,6 +64,10 @@ int main()
         //.second accesses the second value of the pair that is our map values here.
         //and it will diplay the key and value in alphabetical order.
     }
+    cout<<"Finding Shweta "<<marksMap.count("Shweta")<<endl;
+    marksMap.erase("Shweta");
+    marksMap.erase("Rohan");
+    displayMap(marksMap);
     cout<<"The size of the map is "<<marksMap.size()<<endl; //size of map is 5.
     cout<<"The empty value of the map is "<<marksMap.empty()<<endl; //empty element is 0
     
