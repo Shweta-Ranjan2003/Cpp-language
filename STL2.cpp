@@ -68,7 +68,7 @@ int main()
     marksMap.erase("Shweta");
     marksMap.erase("Rohan");
     displayMap(marksMap);
-    cout<<"The size of the map is "<<marksMap.size()<<endl; //size of map is 5.
+    cout<<"The size of the map is "<<marksMap.size()<<endl; //size of map is 3.
     cout<<"The empty value of the map is "<<marksMap.empty()<<endl; //empty element is 0
     
    
