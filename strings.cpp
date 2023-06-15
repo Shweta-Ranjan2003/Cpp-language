@@ -59,14 +59,17 @@ int main()
     cout<<s1.compare(s2)<<endl; //1
      cout<<s1.compare(2,2,s2,5,2)<<endl; //0 doubt
      */
-    string s1 = "arlcomme";
+    string s1 = "arlcolce";
     string s2 = "wearomea";
     cout<<s1.find("lc")<<endl; //2
-    cout<<s1.rfind("lc")<<endl; //2
-    cout<<s2.find_last_of('e')<<endl; //6
+    cout<<s1.rfind("lc")<<endl; //5
+    cout<<s1.find_last_of("olce")<<endl; //6
     cout<<s2.find_first_of('e')<<endl; //1
     s2=s1.substr(0,2);
-    cout<<s2; //ar    s2 will store 2 character of s1 from s1's 0th position
+    cout<<s2<<endl; //ar    s2 will store 2 character of s1 from s1's 0th position
+    string s="apple";
+    string ss="apply";
+    cout<<s.compare(ss)<<endl;
 
 
 
